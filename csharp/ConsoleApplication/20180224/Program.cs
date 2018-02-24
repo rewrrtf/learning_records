@@ -13,6 +13,7 @@ namespace _20180224
             for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine(i);
+                Console.WriteLine(i);
             }
             Console.Read();
         }
