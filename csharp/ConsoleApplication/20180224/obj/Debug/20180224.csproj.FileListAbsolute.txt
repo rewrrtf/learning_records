@@ -1,0 +1,6 @@
+D:\GitHub\learning_records\csharp\ConsoleApplication\20180224\bin\Debug\20180224.exe.config
+D:\GitHub\learning_records\csharp\ConsoleApplication\20180224\bin\Debug\20180224.exe
+D:\GitHub\learning_records\csharp\ConsoleApplication\20180224\bin\Debug\20180224.pdb
+D:\GitHub\learning_records\csharp\ConsoleApplication\20180224\obj\Debug\20180224.csprojResolveAssemblyReference.cache
+D:\GitHub\learning_records\csharp\ConsoleApplication\20180224\obj\Debug\20180224.exe
+D:\GitHub\learning_records\csharp\ConsoleApplication\20180224\obj\Debug\20180224.pdb
