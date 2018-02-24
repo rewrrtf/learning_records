@@ -1,2 +1,47 @@
-我用git bash新建了一个文件
-11.38我修改了这个文件
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div">我是div</div>
+
+    <button id="btn">点击我</button>
+
+    <img src="http://image.zhangxinxu.com/image/study/s/s128/mm3.jpg" alt="" id="img" style="display:none">
+</body>
+
+</html>
+
+<script>
+
+    var F = function (id) {
+        this.element = document.getElementById(id);
+    };
+
+    F.prototype.hide = function () {
+        this.element.style.display = 'none';
+        return this;
+    }
+
+    F.prototype.show = function () {
+        this.element.style.display = "block"
+        return this;
+    }
+
+
+    var $ = function (id) {
+        return new F(id);
+    }
+
+
+    $("img").show();
+
+
+
+</script>

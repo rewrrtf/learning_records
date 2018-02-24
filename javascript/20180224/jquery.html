@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div {
+            width: 200px;
+            height: 200px;
+            border: 2px solid goldenrod;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div"> </div>
+
+    <button id="btn">点击试试</button>
+</body>
+
+</html>
+
+<script>   
+
+    (function (window, undefind) {
+
+        var JQuery = function (seletor, context) {
+            return JQuery.fn.init(seletor, context)
+        }
+        JQuery.fn = JQuery.prototype;
+        JQuery.fn = {
+            init: function (seletor, context) {
+                var nodeList = (context || document).querySelectorAll(seletor);
+                this.length = nodeList.length;
+                for (var i = 0; i < this.length; i += 1) {
+                    this[i] = nodeList[i];
+                }
+                return this;
+            },
+            each: function (fn) {
+                for (var i = 0; i < this.length; i++) {
+                    fn.call(this[i])
+                };
+                return this;
+            },
+            hide: function () {
+                this.each(function () {
+                    this.style.display = 'none';
+                });
+                return this;
+            }
+        }
+
+        JQuery.fn.init.prototype = JQuery.fn;
+
+        window.JQuery = window.$ = JQuery;
+    })(window)
+
+
+    $("button")[0].onclick = function () {
+        $("div").hide();
+    }
+
+// var abc=$("button");
+
+
+
+</script>

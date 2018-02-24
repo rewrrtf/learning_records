@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 </head>
+
 <body>
-	  javascript
-	  abc    已经建好了新分支，看看效果如何、、、	
-	  我准备用git bash 提交一次
-	  在vs code 里修改代码
-	  
+	<button id="button">点击我</button>
+	<img src="http://image.zhangxinxu.com/image/blog/201307/daoxiaomian.jpg" id="img" alt="">
 </body>
+
 </html>
+
+<script>	
+	var F = function (selector, context) {
+		//return this.getNodeList(selector, context);
+		return getNodeList.call(this, selector, context);
+	};
+
+	var getNodeList = function (selector, context) {
+		context = context || document;
+		this.element = context.querySelectorAll(selector);
+		return this;
+	}
+
+	var $ = function (selector, context) {
+		return new F(selector, context);
+	}
+
+	F.prototype.each = function (fn) {
+		var i = 0, length = this.element.length;
+		for (; i < length; i += 1) {
+			fn.call(this.element[i])
+		}
+	}
+
+	F.prototype.hide = function () {
+		//this.element.style.display = 'none';
+	    this.each(function(){
+			this.style.display='none';
+		})
+		return this;
+	}
+
+	F.prototype.show=function(){
+		this.each(function(){
+          this.style.display='block';
+		});
+		return this;
+	}
+
+	var abc = $("img").hide().show();
+
+
+</script>

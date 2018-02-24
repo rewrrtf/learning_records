@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <img src="http://image.zhangxinxu.com/image/study/s/s128/mm3.jpg" id="img" alt="">
 </body>
+
 </html>
+
+<script>	
+
+    var $ = function (selector, context) {
+        // return new F(selector,context)
+
+        return new $.fn.init(selector, context);
+    };
+
+    $.fn = {
+        init: function (selector, context) {
+            var nodeList = (context || document).querySelectorAll(selector);
+            this.length = nodeList.length;
+            for (var i = 0; i < this.length; i += 1) {
+                this[i] = nodeList[i]
+            }
+            return this;
+        },
+        each: function (fn) {
+            var i = 0;
+            for (; i < this.length; i += 1) {
+                fn.call(this[i])
+            }
+            return this;
+        },
+        hide: function () {
+            //this.element.style.display = 'none';
+            this.each(function () {
+                this.style.display = 'none';
+            })
+            return this;
+        },
+        show: function () {
+            this.each(function () {
+                this.style.display = 'block';
+            });
+            return this;
+        },
+    }
+
+    // $.prototype=$.fn;
+
+    // var F =  function (selector, context) {
+    //     return this.init(selector, context)
+    // };
+
+    // F.prototype = $.fn;
+    $.fn.init.prototype = $.fn;
+
+
+
+
+
+    var abc = $("img").hide().show();
+   // abc.style.display='none';
+
+
+</script>
